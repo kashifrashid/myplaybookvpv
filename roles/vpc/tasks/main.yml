@@ -1,0 +1,58 @@
+---
+
+# roles/vpc/tasks/main.yml
+
+# - name:               Create VPC
+#   ec2_vpc_net:
+#       name:             "{{ vpc_name }}"
+#       cidr_block:       "{{ vpc_cidr_block }}"
+#       aws_access_key: "{{ assumed_role.sts_creds.access_key }}"
+#       aws_secret_key: "{{ assumed_role.sts_creds.secret_key }}"
+#       security_token: "{{ assumed_role.sts_creds.session_token }}"
+#       state:            "absent"
+#       region:          "eu-west-1"
+#   register: my_vpc
+
+
+- name:               Create VPC
+  ec2_vpc_net:
+      name:             "{{ vpc_name }}"
+      cidr_block:       "{{ vpc_cidr_block }}"
+      state:            "absent"
+      region:          "eu-west-1"
+  register: my_vpc
+
+
+
+
+
+
+
+# # We now use the set_fact module 
+# # to save the id of the VPC in a new variable.
+
+# - name:               Set VPC ID in variable
+#   set_fact:
+#     vpc_id:           "{{ my_vpc.vpc.id | default(omit)}}"
+  
+
+
+
+# - ec2_group_facts:
+#   register: ec2_group_facts_i
+
+
+# - debug:
+#     var: ec2_group_facts_i 
+
+
+
+# - ec2_facts:
+#   register: all_sub
+
+
+# - debug:
+#      var: all_sub
+
+# - debug: msg="{{ lookup('env') }} is an environment variable"
+  

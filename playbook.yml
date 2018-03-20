@@ -1,0 +1,10 @@
+---
+
+- hosts: local
+  vars_files:
+    - vars/sts.yml
+    - vars/main.yml
+     
+  roles:
+    # - sts 
+    - vpc

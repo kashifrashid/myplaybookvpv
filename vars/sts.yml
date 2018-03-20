@@ -1,0 +1,7 @@
+---
+sts: false
+sts_role_arn: "arn:aws:iam::251542822441:role/js_roles_re-skin-platform_admin" # Role ARN for Destination Assumed Role
+sts_profile: "default" # Name of profile setup in ~/.aws/config
+##sts_mfa: "arn:aws:iam::799605037584:user/infradev/Kashif.Rashid" # MFA Serial from IAM User page
+sts_role_session_name: "default"
+region:     "eu-west-1"
